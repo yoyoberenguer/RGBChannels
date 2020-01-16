@@ -1,6 +1,38 @@
 # RGBChannels
 Convert image to a different format e.g RGB to BGR, RGB to GRB etc 
 
+## Requirement 
+Python >= 3.0
+Cython 
+Numpy
+C compiler (MINGW32, gcc)
+
+## Building project
+Create a setup.py file
+```
+from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
+import numpy
+
+ext_modules = [Extension("PEL", ["PEL.pyx"],
+                         include_dirs=[numpy.get_include()],
+                         extra_compile_args=['/openmp'],
+                         extra_link_args=['/openmp'],
+                         )]
+
+setup(
+  name="PEL",
+  cmdclass={"build_ext": build_ext},
+  ext_modules=ext_modules,
+  include_dirs=[numpy.get_include()]
+)
+
+```
+### Build the cython code 
+C:\>python setup.py build_ext --inplace
+
+
 ```
 e.g 
 swap_channels(surface, 'G0B')  -> swap G and R, Null green, B unchanged
@@ -8,7 +40,44 @@ swap_channels(surface, 'BGR')  -> Convert RGB to BGR
 swap_channels(surface, '0G0')  -> extract Green channel
 ```
 
+## Cython code
 ```
+###cython: boundscheck=False, wraparound=False, nonecheck=False, optimize.use_switch=True
+
+# NUMPY IS REQUIRED
+try:
+    import numpy
+    from numpy import ndarray, zeros, empty, uint8, int32, float64, float32, dstack, full, ones,\
+    asarray, ascontiguousarray
+except ImportError:
+    print("\n<numpy> library is missing on your system."
+          "\nTry: \n   C:\\pip install numpy on a window command prompt.")
+    raise SystemExit
+
+# CYTHON IS REQUIRED
+try:
+    cimport cython
+    from cython.parallel cimport prange
+except ImportError:
+    print("\n<cython> library is missing on your system."
+          "\nTry: \n   C:\\pip install cython on a window command prompt.")
+    raise SystemExit
+
+cimport numpy as np
+
+
+# PYGAME IS REQUIRED
+try:
+    import pygame
+    from pygame import Color, Surface, SRCALPHA, RLEACCEL, BufferProxy
+    from pygame.surfarray import pixels3d, array_alpha, pixels_alpha, array3d
+    from pygame.image import frombuffer
+
+except ImportError:
+    print("\n<Pygame> library is missing on your system."
+          "\nTry: \n   C:\\pip install pygame on a window command prompt.")
+    raise SystemExit
+
 @cython.boundscheck(False)
 @cython.wraparound(False)
 @cython.nonecheck(False)
