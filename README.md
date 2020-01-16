@@ -8,21 +8,19 @@ Numpy
 C compiler (MINGW32, gcc)
 
 ## Building project
-Create a setup.py file
+Create a file setup.py
 ```
 from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
 import numpy
 
-ext_modules = [Extension("PEL", ["PEL.pyx"],
-                         include_dirs=[numpy.get_include()],
-                         extra_compile_args=['/openmp'],
-                         extra_link_args=['/openmp'],
+ext_modules = [Extension("RGB_channel", ["RGB_channel.pyx"],
+                         include_dirs=[numpy.get_include()]                         
                          )]
 
 setup(
-  name="PEL",
+  name="RGB_channel",
   cmdclass={"build_ext": build_ext},
   ext_modules=ext_modules,
   include_dirs=[numpy.get_include()]
@@ -41,6 +39,7 @@ swap_channels(surface, '0G0')  -> extract Green channel
 ```
 
 ## Cython code
+Create a file RGB_channel.pyx
 ```
 ###cython: boundscheck=False, wraparound=False, nonecheck=False, optimize.use_switch=True
 
