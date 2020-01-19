@@ -1,11 +1,14 @@
 # RGBChannels
 Convert image to a different format e.g RGB to BGR, RGB to GRB etc 
 
-
+RGB 
 ![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/RGB.png)
+BGR
 ![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/BGR.png) 
 
+GRB
 ![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/GRB.png) 
+RG0
 ![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/RG0.png) 
 
 
