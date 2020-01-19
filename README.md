@@ -1,5 +1,5 @@
 # RGBChannels
-Convert image to a different format e.g RGB to BGR, RGB to GRB etc 
+Convert image (PNG, JPG, GIF, BMP)  to a different format e.g RGB to BGR, RGB to GRB etc 
 
 RGB 
 ![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/RGB.png)
