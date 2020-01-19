@@ -3,8 +3,9 @@ Convert image to a different format e.g RGB to BGR, RGB to GRB etc
 
 
 ![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/RGB.png)
-![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/RGB.png) 
-![alt text](https://github.com/yoyoberenguer//RGBChannels/blob/master/RGB.png) 
+![alt text](https://github.com/yoyoberenguer/RGBChannels/blob/master/BGR.png) 
+![alt text](https://github.com/yoyoberenguer//RGBChannels/blob/master/GRB.png) 
+![alt text](https://github.com/yoyoberenguer//RGBChannels/blob/master/RG0.png) 
 
 
 ## Requirement 
