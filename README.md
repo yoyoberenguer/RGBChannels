@@ -41,7 +41,7 @@ see example.py file for more precision
 ```
 image Aspen.jpg 1600x1200 24 bit depth
 1000 iterations gives a total processing time of 15 secs (15ms each) (intel xeon 2.4Ghz)
-For a 1600x1200 (24bit) 17ms is not noo bad
+This give us a 66fps 
 ```
 
 
