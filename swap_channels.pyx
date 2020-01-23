@@ -66,23 +66,6 @@ cdef swap_channels_c(surface_:Surface, model):
     RGB, RBG, GRB, GBR, BRG, BGR etc. letters can also be replaced by the digit 0
     to null the entire channel. e.g : 'R0B' -> no green channel  
         
-    TEST:
-        All test performed on a single thread (multi-processing off) 
-        IMAGE PNG 320x720, 32 bit depth
-         _________________________________________________________________________________       
-        |   RESULT   | FORMAT  |   CONVERSION     |      TIMING SINGLE ITERATION          |
-        |____________|_________|__________________|_______________________________________|
-        1 PASS MODE: | 32-bit  |                  |   
-        2 PASS MODE: | 32-bit  | convert()        |   
-        3 PASS MODE: | 32-bit  | convert_alpha()  |   
-        
-        4 PASS MODE: | 24-bit  |                  |   
-        5 PASS MODE: | 24-bit  | convert()        |   
-        6 PASS MODE: | 24-bit  | convert_alpha()  |   
-        
-        7 PASS MODE: | 8-bit   |                  |    
-        8 PASS MODE: | 8-bit   | convert()        |   
-        9 PASS MODE: | 8-bit   | convert_alpha()  |   
     """
     assert isinstance(surface_, Surface), \
            'Expecting Surface for argument surface_ got %s ' % type(surface_)
