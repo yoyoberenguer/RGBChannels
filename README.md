@@ -29,13 +29,13 @@ C:\>python setup_swap.py build_ext --inplace
 ```
 
 ## How to
-```
-e.g 
-swap_channels(surface, 'G0B')  -> swap red channel with Green, Null green, Blue channel unchanged
-swap_channels(surface, 'BGR')  -> Convert RGB to BGR
-swap_channels(surface, '0G0')  -> extract Green channel only (null red and blue)
+```python
+# e.g 
+swap_channels(surface, 'G0B')  # -> swap red channel with Green, Null green, Blue channel unchanged
+swap_channels(surface, 'BGR')  # -> Convert RGB to BGR
+swap_channels(surface, '0G0')  # -> extract Green channel only (null red and blue)
 
-see example.py file for more precision
+# see example.py file for more precision
 ```
 
 ## Timings
